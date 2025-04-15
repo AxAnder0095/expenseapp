@@ -1,0 +1,215 @@
+.auth-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-content-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  height: 50%;
+  padding: 9rem 0;
+}
+
+.auth-title {
+  text-align: center;
+  color: white;
+  font-family: "Krona One", "Inter", Arial, sans-serif;
+  font-size: 2rem;
+}
+
+.auth-content {
+  position: relative;
+}
+
+.auth-sign-in {
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 50px;
+  height: 500px;
+  z-index: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.auth-sign-in .auth-sign-in-left {
+  box-sizing: border-box;
+  flex: 50%;
+  padding-left: 5rem;
+  padding-top: 4rem;
+  padding-right: 6rem;
+}
+
+.login-title {
+  font-size: 2rem;
+  color: #7D12FF;
+  letter-spacing: 1px;
+}
+
+.auth-sign-in-email, .auth-sign-in-password, .auth-sign-in-submit {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.auth-sign-in-email, .auth-sign-in-password {
+  background-color: #D9D9D9;
+}
+.auth-sign-in-email::placeholder, .auth-sign-in-password::placeholder {
+  color: #7D12FF;
+  opacity: 0.5;
+}
+
+.auth-sign-in-submit {
+  box-sizing: border-box;
+  background-color: #111111;
+  color: white;
+  transition: color 200ms ease-in-out;
+}
+.auth-sign-in-submit:hover {
+  background-color: #7D12FF;
+  color: black;
+  transition: color 200ms ease-in-out;
+}
+
+.auth-sign-in .auth-sign-in-right {
+  box-sizing: border-box;
+  background-color: #7D12FF;
+  flex: 50%;
+  padding-left: 6rem;
+  padding-top: 5rem;
+  padding-right: 6rem;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.auth-sign-in .auth-sign-in-right .auth-sign-in-right-content .auth-sign-in-icon {
+  font-size: 5.5rem;
+  text-align: center;
+}
+
+.auth-sign-in .auth-sign-in-right .auth-sign-in-right-content .auth-sign-in-right-desc {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.auth-sign-in .auth-sign-in-right .auth-sign-in-right-content .auth-sign-in-redirect {
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  transition: color 200ms ease-in-out;
+}
+.auth-sign-in .auth-sign-in-right .auth-sign-in-right-content .auth-sign-in-redirect:hover {
+  background-color: #111111;
+  color: white;
+  transition: color 200ms ease-in-out;
+}
+
+.auth-sign-up {
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 50px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: flex;
+  overflow: hidden;
+}
+
+.auth-sign-up .auth-sign-up-left {
+  box-sizing: border-box;
+  flex: 50%;
+  padding-left: 5rem;
+  padding-top: 1rem;
+  padding-right: 6rem;
+}
+
+.auth-sign-up .auth-sign-up-right {
+  box-sizing: border-box;
+  background-color: #7D12FF;
+  flex: 50%;
+  padding-left: 6rem;
+  padding-top: 5rem;
+  padding-right: 6rem;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.auth-sign-up .auth-sign-up-right .auth-sign-up-right-content .auth-sign-up-icon {
+  font-size: 7.5rem;
+  text-align: center;
+}
+
+.auth-sign-up .auth-sign-up-right .auth-sign-up-right-content .auth-sign-up-right-desc {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.auth-sign-up .auth-sign-up-right .auth-sign-up-right-content .auth-sign-up-redirect {
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  transition: color 200ms ease-in-out;
+}
+.auth-sign-up .auth-sign-up-right .auth-sign-up-right-content .auth-sign-up-redirect:hover {
+  background-color: #111111;
+  color: white;
+  transition: color 200ms ease-in-out;
+}
+
+.sign-up-title {
+  font-size: 2rem;
+  color: #7D12FF;
+  letter-spacing: 1px;
+}
+
+.auth-sign-up-email, .auth-sign-up-password, .auth-sign-up-name, .auth-sign-up-submit {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.auth-sign-up-email, .auth-sign-up-password, .auth-sign-up-name {
+  background-color: #D9D9D9;
+}
+.auth-sign-up-email::placeholder, .auth-sign-up-password::placeholder, .auth-sign-up-name::placeholder {
+  color: #7D12FF;
+  opacity: 0.5;
+}
+
+.auth-sign-up-submit {
+  box-sizing: border-box;
+  background-color: #111111;
+  color: white;
+  transition: color 200ms ease-in-out;
+}
+.auth-sign-up-submit:hover {
+  background-color: #7D12FF;
+  color: black;
+  transition: color 200ms ease-in-out;
+}
+
+/*# sourceMappingURL=AuthStyles.css.map */
