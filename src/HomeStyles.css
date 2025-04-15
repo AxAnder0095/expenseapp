@@ -1,5 +1,79 @@
 .home-container {
   color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.home-container .home-container-wrapper {
+  width: 100%;
+  max-width: 1400px;
+}
+
+.home-container .home-container-wrapper .home-main-area {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  grid-column-gap: 0.75rem;
+  grid-row-gap: 0.75rem;
+}
+
+.info, .balance, .expense-sum, .expense-history, .budget, .remaining-budget, .enter-expense, .graph {
+  padding-left: 1rem;
+  padding-top: 1rem;
+  border-radius: 10px;
+}
+
+.info {
+  box-sizing: border-box;
+  grid-row: 1/3;
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.balance {
+  box-sizing: border-box;
+  background-color: #00EEFF;
+}
+
+.expense-sum {
+  box-sizing: border-box;
+  background-color: #FF00B4;
+}
+
+.expense-history {
+  box-sizing: border-box;
+  grid-column: 4/5;
+  grid-row: 1/5;
+  border: 1px solid #FF00B4;
+}
+
+.budget {
+  box-sizing: border-box;
+  background-color: #00FFBC;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.remaining-budget {
+  box-sizing: border-box;
+  background-color: #AB20FD;
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.enter-expense {
+  box-sizing: border-box;
+  border: 1px solid #FF00B4;
+  grid-column: 1/2;
+  grid-row: 3/5;
+}
+
+.graph {
+  box-sizing: border-box;
+  border: 1px solid #00FFBC;
+  grid-column: 2/4;
+  grid-row: 3/5;
 }
 
 /*# sourceMappingURL=HomeStyles.css.map */

@@ -17,9 +17,38 @@ export const Home = () => {
     }
     return (
         <div className={'home-container'}>
-            <div>
-                home page
-                <button onClick={logOut}>log out</button>
+            <div className={'home-container-wrapper'}>
+                <h1>Expense Tracker App</h1>
+                <div className={'home-main-area'}>
+                    <div className={'info'}>
+                        <h3>Enter your balance and budget</h3>
+                        <input placeholder={'balance'}/>
+                        <input placeholder={'budget'}/>
+                    </div>
+                    <div className={'balance'}>
+                        balance
+                        home page
+                        <button onClick={logOut}>log out</button>
+                    </div>
+                    <div className={'expense-sum'}>
+                        expenses
+                    </div>
+                    <div className={'expense-history'}>
+                        expense history
+                    </div>
+                    <div className={'budget'}>
+                        budget
+                    </div>
+                    <div className={'remaining-budget'}>
+                        Remaining
+                    </div>
+                    <div className={'enter-expense'}>
+                        enter expense
+                    </div>
+                    <div className={'graph'}>
+                        graph
+                    </div>
+                </div>
             </div>
         </div>
     )
