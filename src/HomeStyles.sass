@@ -9,6 +9,28 @@
   width: 100%
   max-width: 1400px
 
+.home-container .home-container-wrapper .home-header
+  display: flex
+  justify-content: space-between
+
+.home-container .home-container-wrapper .home-header .header-logout
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 10%
+
+.home-container .home-container-wrapper .home-header .header-logout .logout-button
+  width: 100%
+  padding: 1rem 0
+  border-radius: 50px
+  background-color: #111111
+  border: 1px solid #00FFBC
+  color: white
+
+  &:hover
+    background-color: #00FFBC
+    color: black
+
 .home-container .home-container-wrapper .home-main-area
   display: grid
   grid-template-columns: repeat(4, minmax(0, 1fr))
@@ -17,8 +39,7 @@
   grid-row-gap: 0.75rem
 
 .info, .balance, .expense-sum, .expense-history, .budget, .remaining-budget, .enter-expense, .graph
-  padding-left: 1rem
-  padding-top: 1rem
+  padding: 1rem
   border-radius: 10px
 
 
@@ -26,8 +47,7 @@
   box-sizing: border-box
   grid-row: 1 / 3
   background-color: #1a1a1a
-  padding: 1rem
-  border-radius: 20px
+  border: 1px solid #00FFBC
 
 .balance
   box-sizing: border-box
@@ -42,6 +62,11 @@
   grid-column: 4 / 5
   grid-row: 1 / 5
   border: 1px solid #FF00B4
+  overflow-y: scroll
+  //scrollbar-width: thin
+  scrollbar-color: #FF00B4 #1a1a1a
+  background-color: #1a1a1a
+  height: 815px
 
 .budget
   box-sizing: border-box
@@ -57,13 +82,118 @@
 
 .enter-expense
   box-sizing: border-box
-  border: 1px solid #FF00B4
+  border: 1px solid #00EEFF
   grid-column: 1 / 2
   grid-row: 3 / 5
+  background-color: #1a1a1a
 
 .graph
   box-sizing: border-box
-  border: 1px solid #00FFBC
+  border: 1px solid #AB20FD
   grid-column: 2 / 4
   grid-row: 3 / 5
+  background-color: #1a1a1a
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+// start of info styling
+.info-header
+  margin-top: 2rem
+
+.info-input
+  box-sizing: border-box
+  width: 100%
+  padding: 0.8rem
+  border-radius: 10px
+  border: none
+  background-color: #111111
+  color: #00FFBC
+
+  &::placeholder
+    color: #00FFBC
+    opacity: 0.4
+
+
+.info-submit
+  box-sizing: border-box
+  width: 100%
+  margin-top: 2rem
+  margin-bottom: 1rem
+  padding: 0.8rem
+  border-radius: 10px
+  border: none
+  background-color: #111111
+  color: white
+  transition: 200ms ease-in-out
+
+
+  &:hover
+    background-color: #00FFBC
+    transition: 200ms ease-in-out
+    color: black
+
+// start of enter expense styling
+.enter-expense-header
+  margin-top: 2rem
+
+.expense-expense-input
+  box-sizing: border-box
+  width: 100%
+  padding: 0.8rem
+  border-radius: 10px
+  border: none
+  background-color: #111111
+  color: #00EEFF
+
+  &::placeholder
+    color: #00EEFF
+    opacity: 0.4
+
+.enter-expense-choices
+  margin-top: 1rem
+  display: grid
+  //border: 1px solid white
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  grid-column-gap: 0.75rem
+  grid-row-gap: 0.75rem
+
+.food-label, .entertain-label, .savings-label, .bills-label
+  padding: 1rem
+  border-radius: 10px
+
+  &:hover
+    opacity: 0.8
+
+.food-label
+  background-color: #00FFBC
+
+.entertain-label
+  background-color: #FF00B4
+
+.savings-label
+  background-color: #00EEFF
+
+.bills-label
+  background-color: #7D12FF
+
+.add-expense
+  width: 100%
+  margin-top: 1rem
+  border: none
+  background-color: #111111
+  color: white
+  padding: 0.8rem
+  border-radius: 10px
+  transition: 200ms ease-in-out
+
+  &:hover
+    background-color: #00EEFF
+    color: black
+    transition: 200ms ease-in-out
+
+
+
+
 

@@ -59,7 +59,6 @@ function Auth() {
         }
     };
 
-
     return (
         <div className={'auth-container'}>
             <div className={'auth-content-wrapper'}>
