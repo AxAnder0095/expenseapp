@@ -1,7 +1,7 @@
 import './HomeStyles.sass'
 import {signOut} from "firebase/auth";
 import {auth, db} from "./config/firebase-config.js";
-import {doc, collection, addDoc, setDoc} from 'firebase/firestore'
+import {doc, collection, addDoc, setDoc, updateDoc} from 'firebase/firestore'
 import {setCurrentUser} from "./store/currentUserSlice.js";
 import {useDispatch} from "react-redux";
 import {useState} from "react";
@@ -22,10 +22,11 @@ export const Home = () => {
             const getDoc = await doc(db, 'users', auth?.currentUser?.uid);
 
             // creating new collection with data inside user doc
-            const newCollection = collection(getDoc, 'budget-data');
+            const budgetCollection = collection(getDoc, 'budget-data');
+            const budgetDoc = doc(budgetCollection, 'userBudget')
 
             // adding new collection to database
-            await addDoc(newCollection, {
+            await updateDoc(budgetDoc, {
                 budget: budgetData.budget,
                 balance: budgetData.balance,
                 expenseTotal: budgetData.expenseTotal,
@@ -35,6 +36,11 @@ export const Home = () => {
         }catch (error) {
             console.log(error);
         }
+    }
+
+    const getExpenseType =  (e) => {
+        e.preventDefault();
+        console.log(e.target.value)
     }
 
     //ToDo: figure out how to get last added doc to the budget data collection
@@ -101,19 +107,19 @@ export const Home = () => {
                         <h5>Expense Type</h5>
                         <div className={'enter-expense-choices'}>
                             <label htmlFor={'food'} className={'food-label'}>
-                                <input type={'radio'} id={'food'} name={'expenses'} value={'food'}/>
+                                <input type={'radio'} id={'food'} name={'expenses'} value={'food'} onChange={getExpenseType}/>
                                 <span>Food</span>
                             </label>
                             <label htmlFor={'bills'} className={'bills-label'}>
-                                <input type={'radio'} id={'bills'} name={'expenses'} value={'bills'}/>
+                                <input type={'radio'} id={'bills'} name={'expenses'} value={'bills'} onChange={getExpenseType}/>
                                 <span>Bills</span>
                             </label>
                             <label htmlFor={'entertain'} className={'entertain-label'}>
-                                <input type={'radio'} id={'entertain'} name={'expenses'} value={'entertain'}/>
+                                <input type={'radio'} id={'entertain'} name={'expenses'} value={'entertain'} onChange={getExpenseType}/>
                                 <span>Entertainment</span>
                             </label>
                             <label htmlFor={'savings'} className={'savings-label'}>
-                                <input type={'radio'} id={'savings'} name={'expenses'} value={'savings'}/>
+                                <input type={'radio'} id={'savings'} name={'expenses'} value={'savings'} onChange={getExpenseType}/>
                                 <span>Savings</span>
                             </label>
                         </div>

@@ -2,7 +2,7 @@ import './AuthStyles.sass'
 import {FaCheckCircle} from 'react-icons/fa'
 import {IoLogIn} from "react-icons/io5";
 import {auth, db} from '../config/firebase-config.js'
-import {doc, setDoc} from 'firebase/firestore'
+import {addDoc, collection, doc, setDoc, serverTimestamp} from 'firebase/firestore'
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {setCurrentUser} from '../store/currentUserSlice.js';
@@ -45,7 +45,40 @@ function Auth() {
                 userID: auth?.currentUser?.uid,
                 userEmail: email,
                 userName: name
-            })
+            });
+
+            // creating budget-data collection along side creating a new name for the new collection.
+            // take collection name and store it inside variable
+            const getDoc = await doc(db, 'users', auth?.currentUser?.uid, 'budget-data', 'userBudget');
+
+            // creating new collection with data inside user doc
+            // const budgetCollection = await collection(getDoc, 'budget-data');
+            // const budgetCollection = await collection(getDoc, 'budget-data');
+
+            // set a new document to newly created budget-data collection and give the doc the name userBudget
+            await setDoc(getDoc, {
+                budget: 0,
+                balance: 0,
+                expenseTotal: 0,
+                remaining: 0,
+                timestamp: serverTimestamp()
+            });
+
+
+            // get current user doc
+            const getDoc2 = await doc(db, 'users', auth?.currentUser?.uid);
+
+            // create new collection expense-history
+            const expenseHistoryCollection = await collection(getDoc2, 'expense-history');
+
+            // add a new doc with auto generated name since we are using addDoc and not setDoc.
+            // setDoc will let you choose the name of the doc you're creating.
+            await addDoc(expenseHistoryCollection, {
+                expenseType: '',
+                expenseAmount: 0,
+            });
+
+
         }catch(err) {
             console.log(err)
         }
