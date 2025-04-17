@@ -57,11 +57,13 @@
 .balance {
   box-sizing: border-box;
   background-color: #00EEFF;
+  color: black;
 }
 
 .expense-sum {
   box-sizing: border-box;
   background-color: #FF00B4;
+  color: black;
 }
 
 .expense-history {
@@ -78,6 +80,7 @@
   background-color: #00FFBC;
   grid-column: 2/3;
   grid-row: 2/3;
+  color: black;
 }
 
 .remaining-budget {
@@ -85,6 +88,7 @@
   background-color: #AB20FD;
   grid-column: 3/4;
   grid-row: 2/3;
+  color: black;
 }
 
 .enter-expense {
@@ -173,6 +177,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .food-label, .entertain-label, .savings-label, .bills-label {
   padding: 1rem;
   border-radius: 10px;
+  color: black;
 }
 .food-label:hover, .entertain-label:hover, .savings-label:hover, .bills-label:hover {
   opacity: 0.8;
