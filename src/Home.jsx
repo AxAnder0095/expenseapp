@@ -5,6 +5,7 @@ import {doc, collection, addDoc, updateDoc, getDoc, getDocs, deleteDoc} from 'fi
 import {setCurrentUser} from "./store/currentUserSlice.js";
 import {useDispatch} from "react-redux";
 import {useEffect, useState} from "react";
+import BarChartEA from "./components/BarChartEA.jsx";
 
 export const Home = () => {
     const dispatch = useDispatch();
@@ -42,6 +43,7 @@ export const Home = () => {
             const docSnap = await getDocs(collectionRef);
             const data = docSnap.docs.map((doc) => ({...doc.data(), id: doc.id}));
             setExpenseHistory(data);
+
         }catch (error) {
             console.log(error);
         }
@@ -73,6 +75,7 @@ export const Home = () => {
                 remaining: (budgetData.budget - budgetData.expenseTotal),
 
             });
+            // getBudgetData();
         }catch (error) {
             console.log(error);
         }
@@ -205,7 +208,7 @@ export const Home = () => {
                         <button className={'add-expense'} onClick={addExpense}>Add Expense</button>
                     </div>
                     <div className={'graph'}>
-                        graph
+                        <BarChartEA/>
                     </div>
                 </main>
             </div>
