@@ -2,7 +2,7 @@ import './AuthStyles.sass'
 import {FaCheckCircle} from 'react-icons/fa'
 import {IoLogIn} from "react-icons/io5";
 import {auth, db} from '../config/firebase-config.js'
-import {addDoc, collection, doc, setDoc, serverTimestamp} from 'firebase/firestore'
+import {doc, setDoc, serverTimestamp} from 'firebase/firestore'
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {setCurrentUser} from '../store/currentUserSlice.js';
@@ -65,18 +65,18 @@ function Auth() {
             });
 
 
-            // get current user doc
-            const getDoc2 = await doc(db, 'users', auth?.currentUser?.uid);
-
-            // create new collection expense-history
-            const expenseHistoryCollection = await collection(getDoc2, 'expense-history');
-
-            // add a new doc with auto generated name since we are using addDoc and not setDoc.
-            // setDoc will let you choose the name of the doc you're creating.
-            await addDoc(expenseHistoryCollection, {
-                expenseType: '',
-                expenseAmount: 0,
-            });
+            // // get current user doc
+            // const getDoc2 = await doc(db, 'users', auth?.currentUser?.uid);
+            //
+            // // create new collection expense-history
+            // const expenseHistoryCollection = await collection(getDoc2, 'expense-history');
+            //
+            // // add a new doc with auto generated name since we are using addDoc and not setDoc.
+            // // setDoc will let you choose the name of the doc you're creating.
+            // await addDoc(expenseHistoryCollection, {
+            //     expenseType: '',
+            //     expenseAmount: 0,
+            // });
 
 
         }catch(err) {
