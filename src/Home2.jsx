@@ -3,7 +3,7 @@ import {signOut} from "firebase/auth";
 import {auth, db} from "./config/firebase-config.js";
 import {doc, collection, addDoc, updateDoc, getDoc, getDocs, deleteDoc} from 'firebase/firestore'
 import {useEffect, useState} from "react";
-import BarChartEA from "./components/BarChartEA.jsx";
+import BarChartBD from "./components/BarChartBD.jsx";
 
 export const Home2 = () => {
     const [budget, setBudget] = useState({
@@ -150,6 +150,25 @@ export const Home2 = () => {
         }));
     };
 
+    const formatChartData = () => {
+        const grouped = {};
+
+        budget.expenses.forEach(({expenseType, expenseAmount}) => {
+            // If the expense type does not exist, set expense amount to 0
+            if (!grouped[expenseType])
+                grouped[expenseType] = 0;
+            grouped[expenseType] += expenseAmount;
+        });
+
+        // Converts grouped object into an array of objects so the chart can read the data
+        const formattedExpenses = Object.entries(grouped).map(([type, amount]) =>({
+            expenseType: type,
+            expenseAmount: amount
+        }));
+
+        return formattedExpenses.slice(0, 7);
+    };
+
     //logout function here
     const logOut = async () => {
         try {
@@ -250,7 +269,7 @@ export const Home2 = () => {
                         <button className={'add-expense'} onClick={addExpense}>Add Expense</button>
                     </div>
                     <div className={'graph'}>
-                        <BarChartEA/>
+                        <BarChartBD chartData={formatChartData()}/>
                     </div>
                 </main>
             </div>
