@@ -7,6 +7,9 @@ import {useDispatch} from "react-redux";
 import {useEffect, useState} from "react";
 import BarChartEA from "./components/BarChartEA.jsx";
 
+
+// Broken file with infinite loop, keeping as a
+// reference to when I run into another problem like this
 export const Home = () => {
     const dispatch = useDispatch();
     const [budgetData, setBudgetData] = useState({
