@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {selectCurrentUser} from "./store/currentUserSlice.js";
 import {Home} from "./Home.jsx";
+import {Home2} from "./Home2.jsx";
 
 function App() {
     const user = useSelector(selectCurrentUser);
@@ -14,7 +15,7 @@ function App() {
             {user.currentUser ?
                 <BrowserRouter>
                     <Routes>
-                        <Route index element={<Home/>}/>
+                        <Route index element={<Home2/>}/>
                     </Routes>
                 </BrowserRouter>
                 :
